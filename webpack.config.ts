@@ -51,12 +51,13 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
         }),
       ],
     },
-    module: {
+    module: 
+    {
       rules: [
         esbuildLoader(excludedRegex),
         fileLoader(excludedRegex),
         sassLoader(excludedRegex), 
-        svgLoader(excludedRegex),
+        svgLoader,
       ],
     },
     resolve: {
@@ -67,4 +68,5 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
 
     plugins: getPlugins(env.mode, zipName, bundlePath),
   };
+
 };

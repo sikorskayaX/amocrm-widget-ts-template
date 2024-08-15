@@ -16,7 +16,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
 }
 
 
@@ -31,9 +30,59 @@
 
 }
 
-@mixin titleBig(){
+@mixin titleBigInter(){
     font-family: Inter;
     font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@mixin textMediumInter(){
+    color: $text-dark;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 99.844%; 
+    text-transform: uppercase;
+}
+
+@mixin textMediumMontserrat(){
+    color: $text-dark;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+@mixin titlePTSans(){
+    color: $text-dark;
+    text-align: center;
+    font-family: "PT Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@mixin textPTSans{
+    color: $green;
+    font-family: "PT Sans";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@mixin buttonInter{
+    color: $background;
+    font-family: Inter;
+    font-size: 15px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;

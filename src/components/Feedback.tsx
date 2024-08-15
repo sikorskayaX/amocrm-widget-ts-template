@@ -4,7 +4,6 @@ import { Select, Checkbox, Button, TextField } from "reon-ui-lib";
 const Feedback = () : ReactNode => {
     return(
         <section className="feedback">
-            
             <div className="feedback__text">
             Данный раздел необходим для получения прямой обратной связи от наших клиентов 
             и партнеров о том, каких виджетов в REON.Маркет Вам не хватает и какой функционал необходимо добавить или доработать в том или ином виджете. Все свои идеи 
@@ -15,23 +14,24 @@ const Feedback = () : ReactNode => {
         <form className="feedback__form">
             <div className="feedback__selects">
             <Select
+                
                 ariaIds={{
                     comboboxId: 'combobox1',
                     labelId: 'label1',
                     listboxId: 'listbox',
                     optionIdPrefix: 'option'
                 }}
-                label="Распределение заявок"
+                label="Распределение заявок 1"
                 options={{
-                    "1": "Распределение заявок",
-                    "2": "Распределение заявок2",
-                    "3": "Распределение заявок3",
+                    start: "Распределение заявок",
+                    first: "Распределение",
+                    second: "Заявок",
                 }}
                 placeholder="Распределение заявок"
                 selectionSettings={{
                     multiple: false,
                     onChange: (e) => console.debug(e),
-                    value: "Распределение заявок"
+                    value: 'start'
                 }}
                 variant="underlined"
             />
@@ -44,9 +44,9 @@ const Feedback = () : ReactNode => {
                 }}
                 label="Добавить новый функционал"
                 options={{
-                    start: <>Добавить3 новый функционал</>,
-                    first: <>Первый</>,
-                    second: <>Второй</>
+                    start: 'Добавить новый функционал',
+                    first: 'Добавить',
+                    second: 'Новый функционал'
                 }}
                 placeholder="Добавить новый функционал"
                 selectionSettings={{
@@ -58,17 +58,15 @@ const Feedback = () : ReactNode => {
             />
             </div>
             <TextField
-                className="feedback__input-big"
-                type="text"
-                label="Инпут"
+                label="Инпут1"
                 onChange={function iu(){}}
-                placeholder="Инпут"
+                placeholder="Инпут1"
                 value=""
                 variant="outlined"
+                height= '100px'
             />
             <div className="feedback__inputs">
                 <TextField
-                    className="feedback__input"
                     type="text"
                     label="Инпут"
                     onChange={function iu(){}}
@@ -77,7 +75,6 @@ const Feedback = () : ReactNode => {
                     variant="outlined"
                 />
                 <TextField
-                    className="feedback__input"
                     type="email"
                     label="Инпут"
                     onChange={function iu(){}}
@@ -86,7 +83,6 @@ const Feedback = () : ReactNode => {
                     variant="outlined"
                 />
                 <TextField
-                    className="feedback__input"
                     type="tel"
                     label="Инпут"
                     onChange={function iu(){}}

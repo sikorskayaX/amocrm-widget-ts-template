@@ -1,17 +1,24 @@
-.navigation{
+.navigation {
     @include labelsGrey;
-    &__list{
-        text-decoration: none;
+
+    &__list {
+        cursor: pointer;
+        list-style: none;
         display: flex;
         justify-content: space-between;
         border-bottom: solid $labels-grey 2px;
         margin-bottom: 40px;
+        transition-timing-function: linear;
     }
-    &__item{
+
+    &__item {
         padding-bottom: 10px;
-        &:hover{
+
+        &.active {
             color: $blue;
-            border-bottom: solid $blue 2px;
+            border-bottom: solid $blue 4px;
+            z-index: 1; 
+            margin-bottom: -2px; 
         }
     }
 }

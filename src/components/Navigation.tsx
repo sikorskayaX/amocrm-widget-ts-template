@@ -1,6 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { useState, ReactNode } from "react";
+import classNames from 'classnames';
 
 const Navigation = ({ setCurrentModal }): ReactNode => {
+    const [currentValue, setCurrentValue] = useState<string | null>('feedback');
+
     const navItems = [
         { value: 'settings', label: 'настройки' },
         { value: 'subscribe', label: 'подписка' },
@@ -10,6 +13,7 @@ const Navigation = ({ setCurrentModal }): ReactNode => {
 
     const handleChangeModal = (value: string): void => {
         setCurrentModal(value);
+        setCurrentValue(value);
         console.debug(value);
     };
 
@@ -19,7 +23,9 @@ const Navigation = ({ setCurrentModal }): ReactNode => {
                 {navItems.map(item => (
                     <li
                         key={item.value}
-                        className="navigation__item"
+                        className={
+                            classNames('navigation__item', { 'active' : currentValue === item.value })
+                        }
                         onClick={() => handleChangeModal(item.value)}
                     >
                         {item.label}

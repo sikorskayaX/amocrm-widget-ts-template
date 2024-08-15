@@ -1,6 +1,17 @@
 .market{
-    &__title{
-        @include titleBig;
+    display: flex;
+    flex-direction: column;
+    &__block{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__images-aside{
+        width: 248px;
+        height: 158px;
+    }
+    &__title-first{
+        @include titleBigInter;
+        width: 60%;
         &:before{
             content: 'Добро пожаловать в ' ; 
             color: $text-dark;
@@ -9,5 +20,74 @@
             content: 'маркетплейс reon';
             color: $green;
         }
+    }
+    &__title-second{
+        @include titleBigInter;
+        margin-top: 40px;
+        &:before{
+            content: 'вы ' ; 
+            color: $text-dark;
+        }
+        &:after{
+            content: 'интегратор?';
+            color: $green;
+        }
+    }
+    &__text{
+        @include textMediumInter;
+        margin-top: 20px;
+        display: flex;
+        padding: 7px 10px;
+        border-radius: 20px;
+        background: $green;    
+    }
+    &__par{
+        @include textMediumMontserrat;
+        margin-top: 10px;
+        width: 70%;
+    }
+    &__title-little{
+        @include titlePTSans;
+        padding: 7px 50px;
+        border-radius: 10px;
+        border: 1px solid $green;
+        margin: 30px 0 20px 0;
+        align-self: center;
+    }
+    &__images{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    &__images-block{
+        width: 115px;
+        height: 78px;
+        border-radius: 3.807px;
+        background-color: $text-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__images-span{
+        @include textPTSans;
+        width: 60px;
+        margin-left: 5px;
+    }
+    &__conditions{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 40px;
+    }
+    &__arrow{
+        margin-right: 50px
+    }
+    &__conditions-button{
+        @include buttonInter;
+        border-radius: 10px;
+        background: $text-dark;
+        display: flex;
+        padding: 20px;
+        margin-left: 50px;
     }
 }

@@ -3,4 +3,13 @@
     display: flex;
     flex-direction: column;
     padding: 31px;
+    width: 655px;
+}
+
+#root{
+    width: 655px;
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    padding: 31px;
 }
