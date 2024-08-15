@@ -1,0 +1,13 @@
+.market{
+    &__title{
+        @include titleBig;
+        &:before{
+            content: 'Добро пожаловать в ' ; 
+            color: $text-dark;
+        }
+        &:after{
+            content: 'маркетплейс reon';
+            color: $green;
+        }
+    }
+}

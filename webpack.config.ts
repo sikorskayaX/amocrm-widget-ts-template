@@ -5,9 +5,9 @@ import { WebpackConfiguration } from "webpack-cli";
 import esbuildLoader from "./config/loaders/esbuildLoader";
 import fileLoader from "./config/loaders/fileLoader";
 import sassLoader from "./config/loaders/sassLoader";
+import svgLoader from "./config/loaders/svgLoader";
 import { getPlugins } from "./config/plugins/getPlugins";
 import { ConfigEnvironment } from "./config/lib/types";
-//import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default (env: ConfigEnvironment): WebpackConfiguration => {
   const isDev = env.mode === "development" || env.mode === "rebuild";
@@ -38,6 +38,7 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
       filename: "index.js",
       path: bundlePath,
       libraryTarget: "amd",
+      assetModuleFilename: 'assets/[name][ext]'
     },
     optimization: {
       minimize: true,
@@ -55,6 +56,7 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
         esbuildLoader(excludedRegex),
         fileLoader(excludedRegex),
         sassLoader(excludedRegex), 
+        svgLoader(excludedRegex),
       ],
     },
     resolve: {

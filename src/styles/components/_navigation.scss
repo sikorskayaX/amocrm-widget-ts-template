@@ -1,0 +1,17 @@
+.navigation{
+    @include labelsGrey;
+    &__list{
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid $labels-grey 2px;
+        margin-bottom: 40px;
+    }
+    &__item{
+        padding-bottom: 10px;
+        &:hover{
+            color: $blue;
+            border-bottom: solid $blue 2px;
+        }
+    }
+}

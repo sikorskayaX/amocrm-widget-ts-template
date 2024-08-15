@@ -17,7 +17,9 @@ const Widget: WidgetSchema = {
     console.debug('settings');
     const widgetBlock = document.querySelector('.widget-settings') as HTMLElement;
     const modalRoot = ReactDOM.createRoot(widgetBlock);
-    modalRoot.render(<App/>)
+    modalRoot.render(
+      <App/>
+    );
     return true;
   },
 
