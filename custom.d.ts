@@ -14,7 +14,7 @@ declare module '*.scss' {
 }
 
 declare module '*.png';
-declare module '*.jpj';
+declare module '*.jpg';
 declare module '*.jpeg';
 {
 	import React from "react";

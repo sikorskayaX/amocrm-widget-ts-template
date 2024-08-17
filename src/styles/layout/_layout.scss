@@ -1,9 +1,21 @@
+.modal{
+    z-index: 99;
+}
+
+
 .widget-settings{
     background-color: $background;
-    display: flex;
-    flex-direction: column;
-    padding: 31px;
-    width: 655px;
+    &__wrap-desc-space{
+        display: flex;
+        flex-direction: column;
+        padding: 31px;
+        width: 655px;
+    }
+}
+
+.main{
+    position: relative;
+    z-index: 10000 !important;
 }
 
 #root{

@@ -11,12 +11,11 @@
     &__selects{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
     }
     &__inputs{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 7px;
     }
     &__input-big, &__input{
         margin-bottom: 20px;
@@ -24,13 +23,5 @@
     &__input-big{
         width: 100%;
         
-    }
-    &__checkbox{
-        margin-bottom: 30px;
-    }
-    &__button{
-        position: absolute; 
-        bottom: 0;
-        left: 0;
     }
 }

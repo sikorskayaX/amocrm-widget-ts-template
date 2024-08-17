@@ -1,20 +1,27 @@
-import React, { ReactNode, useState } from "react";
+import React, { useState } from "react";
 import './styles/style.scss';
-import Feedback from "./components/Feedback";
-import Market from './components/Market';
+import Feedback from "./components/Feedback/Feedback";
+import Market from './components/Market/Market';
 import Navigation from './components/Navigation';
 
-const App = () : ReactNode => {
-    const [currentModal, setCurrentModal] = useState('feedback');
+const componentsMap = {
+  feedback: Feedback,
+  market: Market,
+};
 
-    return (
-        <>
-          <Navigation setCurrentModal={setCurrentModal} />
-          {currentModal === 'feedback' && <Feedback />}
-          {currentModal === 'market' && <Market />}
-        </>
-      );
-      
+const App = (): JSX.Element => {
+  const [currentModal, setCurrentModal] = useState('feedback');
+  const CurrentComponent = componentsMap[currentModal];
+
+  return (
+    <>
+      <Navigation 
+        currentModal = {currentModal}
+        setCurrentModal={setCurrentModal} 
+      />
+      {CurrentComponent && <CurrentComponent />}
+    </>
+  )
 }
 
-export default App
+export default App;

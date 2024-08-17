@@ -8,7 +8,7 @@
         justify-content: space-between;
         border-bottom: solid $labels-grey 2px;
         margin-bottom: 40px;
-        transition-timing-function: linear;
+        
     }
 
     &__item {
@@ -19,6 +19,12 @@
             border-bottom: solid $blue 4px;
             z-index: 1; 
             margin-bottom: -2px; 
+            transition: color 0.5s;
+        }
+
+        &:hover {
+            color: $dark-grey;
+            transition: color 0.3s;
         }
     }
 }

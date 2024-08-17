@@ -1,9 +1,7 @@
-import React, { useState, ReactNode } from "react";
+import React from "react";
 import classNames from 'classnames';
 
-const Navigation = ({ setCurrentModal }): ReactNode => {
-    const [currentValue, setCurrentValue] = useState<string | null>('feedback');
-
+const Navigation = ({ currentModal, setCurrentModal }): JSX.Element => {
     const navItems = [
         { value: 'settings', label: 'настройки' },
         { value: 'subscribe', label: 'подписка' },
@@ -11,24 +9,16 @@ const Navigation = ({ setCurrentModal }): ReactNode => {
         { value: 'market', label: 'REON.Маркет' },
     ];
 
-    const handleChangeModal = (value: string): void => {
-        setCurrentModal(value);
-        setCurrentValue(value);
-        console.debug(value);
-    };
-
     return (
         <nav className="navigation">
             <ul className="navigation__list">
-                {navItems.map(item => (
+                {navItems.map(({ value, label }) => (
                     <li
-                        key={item.value}
-                        className={
-                            classNames('navigation__item', { 'active' : currentValue === item.value })
-                        }
-                        onClick={() => handleChangeModal(item.value)}
+                        key={value}
+                        className={classNames('navigation__item', { 'active': currentModal === value })}
+                        onClick={() => setCurrentModal(value)}
                     >
-                        {item.label}
+                        {label}
                     </li>
                 ))}
             </ul>
@@ -37,3 +27,4 @@ const Navigation = ({ setCurrentModal }): ReactNode => {
 };
 
 export default Navigation;
+

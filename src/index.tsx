@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client';
 
 const Widget: WidgetSchema = {
   async render(): Promise<boolean> {
-    console.debug('widget works !');
+    console.debug('widget works 1!');
     return true;
   },
 
@@ -15,8 +15,7 @@ const Widget: WidgetSchema = {
   },
 
   settings(): boolean {
-    console.debug('settings');
-    const widgetBlock = document.querySelector('.widget-settings') as HTMLElement;
+    const widgetBlock = document.querySelector('.widget-settings__wrap-desc-space') as HTMLElement;
     const modalRoot = ReactDOM.createRoot(widgetBlock);
     modalRoot.render(
       <App/>
