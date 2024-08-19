@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import {Checkbox, Button } from "reon-ui-lib";
 import FormSelect from "./FormSelect";
 import FormInput from "./FormInput";
 
 const FeedbackForm = () : JSX.Element => {
+    const [checked, setChecked] = useState<boolean>(false);
+    
     return(
         <form className="feedback__form">
             <div className="feedback__selects">
             <FormSelect
-                    name="slct1"
-                    label="slct1"
+                    name="Выберите виджет"
+                    label="Выберите виджет"
                     options={{
                         start: "Распределение заявок",
                         first: "Распределение",
@@ -18,8 +20,8 @@ const FeedbackForm = () : JSX.Element => {
                     styles = {{combobox: {width: '260px'}}}
             />
             <FormSelect
-                    name="slct2"
-                    label="slct20"
+                    name="Выберите тип обращения"
+                    label="Выберите тип обращения"
                     options={{
                         start: 'Добавить новый функционал',
                         first: 'Добавить',
@@ -29,31 +31,38 @@ const FeedbackForm = () : JSX.Element => {
                 />
             </div>
             <FormInput
-                name="Введите текст"
+                name="Введите текст обращения"
                 type = "text"
-                style={{ height: '100px', margin: '20px 0' }}
+                style={{ height: '75px', margin: '20px 0' }}
             />
             <div className="feedback__inputs">
                 <FormInput
-                    name="Имя"
-                    type="text" style={undefined}                />
+                    name="ФИО"
+                    type="text"                
+                    />
                 <FormInput
-                    name="Почта"
-                    type="email" style={undefined}                />
+                    name="E-mail"
+                    type="email"             
+                    />
                 <FormInput
-                    name="Телефон"
-                    type="tel" style={undefined}                />
+                    name="+7 (000) 000-00-00"
+                    type="tel"   
+                    style={{width:'147px'}}             
+                    />
             </div>
             <Checkbox
-                label="Я прочитал(-а) и согласен (-на) с условиями обработки персональных данных"
-                onChange={function iu(){}}
+                label= <> Я прочитал(-а) и согласен (-на) с <a href="https://reon.pro/politika">условиями</a> обработки персональных данных</>
+                checked = {checked}
+                onChange={() => setChecked(prev => !prev)}
                 style={{marginBottom: '30px'}}
             />
             <Button
                 color="primary"
                 onClick={function iu(){}}
+                styles={{button : {marginTop: '20px', alignSelf: 'flex-end'}}}
                 >
                 отправить
+
             </Button>
         </form>
     )

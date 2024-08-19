@@ -9,8 +9,8 @@
 
 }
 
-@mixin textDark(){
-    color: $text-dark;
+@mixin textDark($color){
+    color: $color;
     font-family: "PT Sans";
     font-size: 15px;
     font-style: normal;

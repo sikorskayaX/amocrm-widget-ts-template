@@ -1,22 +1,27 @@
-import React, { ReactNode } from "react";
+import React from "react";
+
+export type Widget = {
+    component: React.ComponentType; 
+    label: string | JSX.Element;
+};
 
 type MarketWidgetsProps = {
-    title:string,
-    widgetsList: any
-}
+    title: string;
+    widgetsList: Widget[];
+};
 
-const MarketWidgets = ({ title, widgetsList }:MarketWidgetsProps) : JSX.Element => (
-    <section>
+const MarketWidgets = ({ title, widgetsList }: MarketWidgetsProps): JSX.Element => (
+    <>
         <h3 className="market__title-little">{title}</h3>
         <div className="market__images">
-            {widgetsList.map(({ component: Component, label }) => (
-                <div className="market__images-block" key={label}>
+            {widgetsList.map(({ component: Component, label }, index) => (
+                <div className="market__images-block" key={index}>
                     {Component && <Component />}
                     <span className="market__images-span">{label}</span>
                 </div>
             ))}
         </div>
-    </section>
+    </>
 );
 
 export default MarketWidgets

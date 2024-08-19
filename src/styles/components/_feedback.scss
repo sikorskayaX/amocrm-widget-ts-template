@@ -1,12 +1,20 @@
 .feedback{
     position: relative;
     &__text{
-        @include textDark;
+        @include textDark($text-dark);
         margin-bottom: 40px;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
     }
     &__title{
         @include titleDark;
         margin-bottom: 30px;
+    }
+    &__link{
+        @include textDark($blue);
+        text-decoration-line: underline;
     }
     &__selects{
         display: flex;
@@ -16,12 +24,5 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 7px;
-    }
-    &__input-big, &__input{
-        margin-bottom: 20px;
-    }
-    &__input-big{
-        width: 100%;
-        
     }
 }

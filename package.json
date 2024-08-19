@@ -9,7 +9,7 @@
     "build:dev:static": "cross-env ENV_FILENAME=dev webpack --env mode=test",
     "build:test": "cross-env ENV_FILENAME=test webpack --env mode=test",
     "build:rebuild": "cross-env ENV_FILENAME=dev webpack --env mode=rebuild",
-    "zrok": "zrok.exe share public ./widget --backend-mode web"
+    "zrok": "zrok.exe share public ./widget --backend-mode drive"
   },
   "author": "dementor",
   "license": "ISC",
@@ -63,6 +63,7 @@
     "axios": "1.4.0",
     "classnames": "2.3.2",
     "dayjs": "1.11.7",
+    "file-loader": "^6.2.0",
     "loader-utils": "3.2.1",
     "ngrok": "^5.0.0-beta.2",
     "react": "18.2.0",

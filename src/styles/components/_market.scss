@@ -14,31 +14,25 @@
     &__images-aside{
         width: 248px;
         height: 158px;
-        background-image: url('/src/assets/img1.png')
+        position: relative;
+    }
+    &__image{
+        width: 248px;
+        height: 158px;
+        flex-shrink: 0;
+        position: absolute;
+        z-index: 1;
+    }
+    &__svg{
+        position: absolute;
     }
     &__title-first{
         @include titleBigInter;
-        width: 60%;
-        &:before{
-            content: 'Добро пожаловать в ' ; 
-            color: $text-dark;
-        }
-        &:after{
-            content: 'маркетплейс reon';
-            color: $green;
-        }
+        width: 241px;
     }
     &__title-second{
         @include titleBigInter;
         margin-top: 40px;
-        &:before{
-            content: 'вы ' ; 
-            color: $text-dark;
-        }
-        &:after{
-            content: 'интегратор?';
-            color: $green;
-        }
     }
     &__text{
         @include textMediumInter;
@@ -48,10 +42,13 @@
         border-radius: 20px;
         background: $green;    
     }
-    &__par{
+    &__par-first, &__par-second{
         @include textMediumMontserrat;
         margin-top: 10px;
-        width: 70%;
+        width: 305px;
+    }
+    &__par-second{
+        width: 100%;
     }
     &__title-little{
         @include titlePTSans;
@@ -63,11 +60,11 @@
     }
     &__images{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(4, 115px);
+        row-gap: 20px;
+        justify-content: space-between;
     }
     &__images-block{
-        width: 115px;
         height: 78px;
         border-radius: 3.807px;
         background-color: $text-dark;
@@ -77,7 +74,7 @@
     }
     &__images-span{
         @include textPTSans;
-        width: 60px;
+        max-width: 76px;
         margin-left: 5px;
     }
     &__conditions{
@@ -96,5 +93,12 @@
         display: flex;
         padding: 20px;
         margin-left: 50px;
+        &:hover{
+            transform: scale(1.02);
+        }
     }
+}
+
+.green__span{
+    color: $green;
 }

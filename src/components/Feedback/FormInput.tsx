@@ -14,7 +14,7 @@ const FormInput = ({ name, type, style = undefined}: FormInputProps) : JSX.Eleme
             placeholder={name}
             type={type}
             variant="outlined"
-            style={{backgroundColor:'#fff', ...style }}
+            style={{ backgroundColor:'#fff', ...style }}
         />
     );
 }

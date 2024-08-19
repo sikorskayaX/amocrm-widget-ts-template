@@ -13,16 +13,12 @@ declare module '*.scss' {
     export default content;
 }
 
-declare module '*.png';
-declare module '*.jpg';
-declare module '*.jpeg';
-{
-	import React from "react";
-	const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
-	export default SVG;
+declare module "*.png" {
+	const value: any;
+	export default value;
 }
 
 declare module '*.svg' {
 	const content: any;
 	export default content;
-  }
+}

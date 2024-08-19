@@ -11,11 +11,12 @@
         padding: 31px;
         width: 655px;
     }
-}
-
-.main{
-    position: relative;
-    z-index: 10000 !important;
+    &__base-space{
+        background-color: $background;
+    }
+    &__name{
+        color: $text-dark;
+    }
 }
 
 #root{

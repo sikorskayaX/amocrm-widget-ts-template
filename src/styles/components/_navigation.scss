@@ -17,13 +17,14 @@
         &.active {
             color: $blue;
             border-bottom: solid $blue 4px;
+            font-weight: 700;
             z-index: 1; 
             margin-bottom: -2px; 
             transition: color 0.5s;
         }
 
         &:hover {
-            color: $dark-grey;
+            color: $blue;
             transition: color 0.3s;
         }
     }

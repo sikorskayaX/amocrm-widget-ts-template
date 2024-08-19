@@ -38,7 +38,8 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
       filename: "index.js",
       path: bundlePath,
       libraryTarget: "amd",
-      assetModuleFilename: 'assets/[name][ext]'
+      assetModuleFilename: 'assets/[name][ext]',
+      publicPath: 'https://ztr2rvffapxl.share.zrok.io/',
     },
     optimization: {
       minimize: true,
@@ -58,7 +59,7 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
         fileLoader(excludedRegex),
         sassLoader(excludedRegex), 
         svgLoader,
-      ],
+      ],     
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
