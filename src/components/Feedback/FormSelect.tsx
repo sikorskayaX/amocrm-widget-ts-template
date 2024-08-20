@@ -10,7 +10,7 @@ type FormSelectProps = {
 }
 
 const FormSelect = ({name, options, label, styles}:FormSelectProps) : JSX.Element => {
-    const [value, setValue] = useState<string>('start');
+    const [value, setValue] = useState<string>('');
 
     return(
         <Select

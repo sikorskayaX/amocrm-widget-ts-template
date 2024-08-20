@@ -39,7 +39,7 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
       path: bundlePath,
       libraryTarget: "amd",
       assetModuleFilename: 'assets/[name][ext]',
-      publicPath: 'https://ztr2rvffapxl.share.zrok.io/',
+      publicPath: process.env.DEV_MODULE_URL + '/',
     },
     optimization: {
       minimize: true,

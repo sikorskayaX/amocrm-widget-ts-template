@@ -1,39 +1,35 @@
 import React, { useState } from "react";
-import {Checkbox, Button } from "reon-ui-lib";
+import { Checkbox, Button } from "reon-ui-lib";
 import FormSelect from "./FormSelect";
 import FormInput from "./FormInput";
+import { widgetOptions, requestOptions } from "../mocks";
 
-const FeedbackForm = () : JSX.Element => {
+export type FeedbackFormProps = {
+    setMessageSent: (messageSent: boolean) => void;
+}
+
+const FeedbackForm = ({ setMessageSent }: FeedbackFormProps): JSX.Element => {
     const [checked, setChecked] = useState<boolean>(false);
-    
-    return(
+
+    return (
         <form className="feedback__form">
             <div className="feedback__selects">
-            <FormSelect
+                <FormSelect
                     name="Выберите виджет"
                     label="Выберите виджет"
-                    options={{
-                        start: "Распределение заявок",
-                        first: "Распределение",
-                        second: "Заявок",
-                    }}                
-                    styles = {{combobox: {width: '260px'}}}
-            />
-            <FormSelect
+                    options={widgetOptions}
+                    styles={{ combobox: { width: '260px' } }}
+                />
+                <FormSelect
                     name="Выберите тип обращения"
                     label="Выберите тип обращения"
-                    options={{
-                        start: 'Добавить новый функционал',
-                        first: 'Добавить',
-                        second: 'Новый функционал'
-                    }} 
-                    styles = {{combobox: {width: '260px'}}}          
+                    options={requestOptions}
+                    styles={{ combobox: { width: '260px' } }}
                 />
             </div>
-            <FormInput
-                name="Введите текст обращения"
-                type = "text"
-                style={{ height: '75px', margin: '20px 0' }}
+            <textarea 
+                className="feedback__textarea" 
+                placeholder="Введите текст обращения"
             />
             <div className="feedback__inputs">
                 <FormInput
@@ -51,21 +47,23 @@ const FeedbackForm = () : JSX.Element => {
                     />
             </div>
             <Checkbox
-                label= <> Я прочитал(-а) и согласен (-на) с <a href="https://reon.pro/politika">условиями</a> обработки персональных данных</>
-                checked = {checked}
+                label={
+                    <>Я прочитал(-а) и согласен(-на) с <a href="https://reon.pro/politika">условиями</a> обработки персональных данных</>
+                }
+                checked={checked}
                 onChange={() => setChecked(prev => !prev)}
-                style={{marginBottom: '30px'}}
+                style={{ marginBottom: '30px' }}
             />
             <Button
                 color="primary"
-                onClick={function iu(){}}
-                styles={{button : {marginTop: '20px', alignSelf: 'flex-end'}}}
-                >
+                onClick={() => setMessageSent(true)}
+                disabled={!checked}
+                styles={{ button: { marginTop: '20px', alignSelf: 'flex-end' } }}
+            >
                 отправить
-
             </Button>
         </form>
-    )
+    );
 }
 
 export default FeedbackForm;

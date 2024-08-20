@@ -1,4 +1,4 @@
-define(['https://ztr2rvffapxl.share.zrok.io/index.js'], function (App){
+define(['https://r3barxo7p1vt.share.zrok.io/index.js'], function (App){
 	const Widget = function () {
 		const self = this;
 		self.system = this.system();

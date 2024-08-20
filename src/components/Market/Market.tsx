@@ -12,7 +12,7 @@ const Market = () => {
         <section className="market">
             <div className="market__block">
                 <div className="market__column">
-                    <h2 className="market__title-first">Добро пожаловать в <span className="green__span">маркетплейс reon</span></h2>
+                    <h2 className="market__title-first">Добро пожаловать в <span className="green-span">маркетплейс reon</span></h2>
                     <p className="market__text">Сделай работу в amoCRM быстрее и удобнее!</p>
                     <p className="market__par-first">Все виджеты и разработки созданы по запросу клиентов и решают реальные проблемы отделов продаж.</p>
                 </div>
@@ -21,10 +21,10 @@ const Market = () => {
                     <MarketSvg className="market__svg"/>
                 </div>
             </div>
-            <MarketWidgets title="Платные по подписке" widgetsList={widgets} />
-            <MarketWidgets title="Бесплатные для всех" widgetsList={freeWidgets} />
+            <MarketWidgets title="Платные по подписке" widgetsList={widgets} className = 'top-40'/>
+            <MarketWidgets title="Бесплатные для всех" widgetsList={freeWidgets} className = 'top-30'/>
 
-            <h2 className="market__title-second">вЫ <span className="green__span">ИНТегратор</span>?</h2>
+            <h2 className="market__title-second">вЫ <span className="green-span">ИНТегратор</span>?</h2>
             <p className="market__par-second">Станьте партнером компании REON и получайте партнерское вознаграждение до 50% от стоимости оплаты виджетов вашими клиентами!</p>
             
             <div className="market__conditions">

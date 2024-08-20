@@ -38,3 +38,16 @@ export const freeWidgets: Widget[] = [
     { component: Connects, label: <>СВЯЗАННЫЕ<br/>СДЕЛКИ</> },
     { component: Tips, label:<>ПОДСКАЗКИ<br/>ДЛЯ ПОЛЕЙ</> },
 ];
+
+
+export const widgetOptions = {
+    start: "Распределение заявок",
+    first: "Распределение",
+    second: "Заявок",
+};
+
+export const requestOptions = {
+    start: 'Добавить новый функционал',
+    first: 'Добавить',
+    second: 'Новый функционал'
+};

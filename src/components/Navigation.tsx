@@ -1,7 +1,12 @@
 import React from "react";
 import classNames from 'classnames';
 
-const Navigation = ({ currentModal, setCurrentModal }): JSX.Element => {
+type NavigationProps = {
+    currentModal: string;
+    setCurrentModal: (modal: string) => void;
+}
+
+const Navigation = ({ currentModal, setCurrentModal }: NavigationProps) => {
     const navItems = [
         { value: 'settings', label: 'настройки' },
         { value: 'subscribe', label: 'подписка' },
@@ -15,7 +20,7 @@ const Navigation = ({ currentModal, setCurrentModal }): JSX.Element => {
                 {navItems.map(({ value, label }) => (
                     <li
                         key={value}
-                        className={classNames('navigation__item', { 'active': currentModal === value })}
+                        className={classNames('navigation__item', { active: currentModal === value })}
                         onClick={() => setCurrentModal(value)}
                     >
                         {label}

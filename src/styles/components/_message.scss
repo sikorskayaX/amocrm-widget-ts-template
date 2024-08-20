@@ -1,0 +1,11 @@
+.message{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    &__title{
+        @include bigTitlePTSans;
+    }
+    &__text{
+        @include normalPTSans($text-black);
+    }
+}

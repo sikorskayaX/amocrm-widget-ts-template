@@ -17,14 +17,17 @@
         position: relative;
     }
     &__image{
-        width: 248px;
-        height: 158px;
-        flex-shrink: 0;
+        width: 270px;
+        height: auto;
         position: absolute;
         z-index: 1;
+        top: -13px;
+        left: -8px;
     }
     &__svg{
         position: absolute;
+        top: 13px;
+        left: 5px;
     }
     &__title-first{
         @include titleBigInter;
@@ -55,7 +58,7 @@
         padding: 7px 50px;
         border-radius: 10px;
         border: 1px solid $green;
-        margin: 30px 0 20px 0;
+        margin-bottom: 20px;
         align-self: center;
     }
     &__images{
@@ -81,10 +84,11 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin-top: 40px;
+        margin-top: 20px;
     }
-    &__arrow{
-        margin-right: 50px
+    &__svg-arrow {
+        margin-right: 50px;
+        animation: move-arrow 2s infinite;
     }
     &__conditions-button{
         @include buttonInter;
@@ -92,13 +96,32 @@
         background: $text-dark;
         display: flex;
         padding: 20px;
-        margin-left: 50px;
         &:hover{
             transform: scale(1.02);
         }
     }
 }
 
-.green__span{
+.green-span{
     color: $green;
+}
+
+.top-30{
+    margin-top: 30px;
+}
+
+.top-40{
+    margin-top: 40px;
+}
+
+@keyframes move-arrow {
+    0% {
+        margin-right: 50px;
+    }
+    50% {
+        margin-right: 80px;
+    }
+    100% {
+        margin-right: 50px;
+    }
 }
