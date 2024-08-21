@@ -1,5 +1,4 @@
-﻿
-import { WidgetSchema } from 'shared/types/Widget.types';
+﻿import { WidgetSchema } from 'shared/types/Widget.types';
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -15,7 +14,7 @@ const Widget: WidgetSchema = {
   },
 
   settings(): boolean {
-    const widgetBlock = document.querySelector('.widget-settings__wrap-desc-space') as HTMLElement;
+    const widgetBlock = document.querySelector('.widget-settings__wrap-desc-space') as HTMLDivElement;
     const modalRoot = ReactDOM.createRoot(widgetBlock);
     modalRoot.render(
       <App/>
@@ -41,15 +40,12 @@ const Widget: WidgetSchema = {
 };
 
 export default Widget;
-/*
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
 
-const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLElement);
-root.render(
-    <React.StrictMode>
-        <App /> 
-    </React.StrictMode>
-);
-*/
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import App from './App';
+
+// const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLElement);
+// root.render(
+//         <App /> 
+// );

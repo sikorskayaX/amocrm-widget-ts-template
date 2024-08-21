@@ -1,13 +1,19 @@
 import React from "react";
 import classNames from 'classnames';
+import { ModalKeys } from "@/App";
 
 type NavigationProps = {
     currentModal: string;
-    setCurrentModal: (modal: string) => void;
+    setCurrentModal: React.Dispatch<React.SetStateAction<ModalKeys>>;
 }
 
+type NavItem = {
+    value: ModalKeys;
+    label: string;
+  };
+
 const Navigation = ({ currentModal, setCurrentModal }: NavigationProps) => {
-    const navItems = [
+    const navItems: NavItem[] = [
         { value: 'settings', label: 'настройки' },
         { value: 'subscribe', label: 'подписка' },
         { value: 'feedback', label: 'обратная связь' },

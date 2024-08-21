@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "reon-ui-lib";
 import { FeedbackFormProps } from "./FeedbackForm";
 
-const FeedbackMessage = ({setMessageSent}: FeedbackFormProps) => {
+const FeedbackMessage = ({setIsMessageSent}: FeedbackFormProps) : JSX.Element => {
     return(
         <div className="message">
             <h1 className="message__title">
@@ -12,7 +12,7 @@ const FeedbackMessage = ({setMessageSent}: FeedbackFormProps) => {
             и менеджер проекта проверит его в ближайшее время! Будем рады реализовать ваш запрос!</p>
             <Button
                 color="primary"
-                onClick={() => setMessageSent(false)}
+                onClick={() => setIsMessageSent(false)}
                 styles={{button : {marginTop: '30px', alignSelf: 'center'}}}
                 >
                 создать новое обращение

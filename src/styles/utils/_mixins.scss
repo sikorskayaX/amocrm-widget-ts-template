@@ -1,53 +1,93 @@
-@mixin labelsGrey(){
-    color: $labels-grey;
-    font-family: "PT Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
+//PT Sans
 
+@mixin textPTSans{
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    line-height: normal;
+}
+
+@mixin imagesText(){
+    @include textPTSans;
+    color: $green;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+@mixin labelsGrey(){
+    @include textPTSans;
+    color: $labels-grey;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 @mixin textDark($color){
+    @include textPTSans;
     color: $color;
-    font-family: "PT Sans";
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 
 
 @mixin titleDark(){
+    @include textPTSans;
     color: $text-dark;
     text-align: center;
-    font-family: "PT Sans";
     font-size: 18px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
+}
 
+@mixin titlePTSans(){
+    color: $text-dark;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@mixin bigTitlePTSans(){
+    color: $text-black;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+@mixin normalPTSans($color){
+    color: $color;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+//Inter
+
+@mixin textInter{
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 @mixin titleBigInter(){
-    font-family: Inter;
+    @include textInter;
     font-size: 20px;
-    font-style: normal;
     font-weight: 800;
-    line-height: normal;
-    text-transform: uppercase;
 }
 
 @mixin textMediumInter(){
+    @include textInter;
     color: $text-dark;
-    font-family: Inter;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 99.844%; 
-    text-transform: uppercase;
 }
+
+@mixin buttonInter{
+    @include textInter;
+    color: $background;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+// Montserrat
 
 @mixin textMediumMontserrat(){
     color: $text-dark;
@@ -56,54 +96,4 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-}
-
-@mixin titlePTSans(){
-    color: $text-dark;
-    text-align: center;
-    font-family: "PT Sans";
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-}
-
-@mixin bigTitlePTSans(){
-    color: $text-black;
-    text-align: center;
-    font-family: "PT Sans";
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-@mixin normalPTSans($color){
-    color: $color;
-    font-family: "PT Sans";
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-@mixin textPTSans{
-    color: $green;
-    font-family: "PT Sans";
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-}
-
-@mixin buttonInter{
-    color: $background;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    text-transform: uppercase;
 }

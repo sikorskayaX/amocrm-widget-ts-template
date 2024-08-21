@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Gong from '../assets/gong.svg';
 import Interface from '../assets/interface.svg';
 import Tasks from '../assets/tasks.svg';
@@ -15,10 +14,10 @@ import Names from '../assets/names.svg';
 import Cities from '../assets/cities.svg';
 import Connects from '../assets/connects.svg';
 import Tips from '../assets/tips.svg';
-import { Widget } from './Market/MarketWidgets';
+import { WidgetItem } from './Market/MarketWidgets';
 
 
-export const widgets: Widget[] = [
+export const widgets: WidgetItem[] = [
     { component: Gong, label: <>ГОНГ</> },
     { component: Interface, label: <>РАСШИРЕННЫЙ<br/>ИНТЕРФЕЙС</> },
     { component: Tasks, label: <>ЗАДАЧИ 2.0</> },
@@ -31,7 +30,7 @@ export const widgets: Widget[] = [
     { component: Notifications, label: <>УВЕДОМЛЕНИЯ<br/>О СОБЫТИЯХ</> },
 ];
 
-export const freeWidgets: Widget[] = [
+export const freeWidgets: WidgetItem[] = [
     { component: Time, label: <>ЧАСОВЫЕ<br/>ПОЯСА</> },
     { component: Names, label: <>АВТОНАЗВАНИЯ<br/>СДЕЛОК</> },
     { component: Cities, label: <>СПРАВОЧНИК<br/>ГОРОДОВ</> },
@@ -41,13 +40,16 @@ export const freeWidgets: Widget[] = [
 
 
 export const widgetOptions = {
-    start: "Распределение заявок",
-    first: "Распределение",
-    second: "Заявок",
+    'Распределение заявок': "Распределение заявок",
+    "Распределение": "Распределение",
+    "Заявок": "Заявок",
 };
 
 export const requestOptions = {
-    start: 'Добавить новый функционал',
-    first: 'Добавить',
-    second: 'Новый функционал'
+    'Добавить новый функционал': 'Добавить новый функционал',
+    'Добавить': 'Добавить',
+    'Новый функционал': 'Новый функционал'
 };
+
+export const politikaLink:string = "https://reon.pro/politika";
+export const marketLink:string = "https://reon.pro/marketplace";

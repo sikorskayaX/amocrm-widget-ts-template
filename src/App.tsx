@@ -4,13 +4,17 @@ import Feedback from "./components/Feedback/Feedback";
 import Market from './components/Market/Market';
 import Navigation from './components/Navigation';
 
+export type ModalKeys = 'feedback' | 'market' | 'settings' | 'subscribe'; 
+
 const componentsMap = {
   feedback: Feedback,
   market: Market,
+  settings: Feedback,
+  subscribe: Market
 };
 
 const App = (): JSX.Element => {
-  const [currentModal, setCurrentModal] = useState('feedback');
+  const [currentModal, setCurrentModal] = useState<ModalKeys>('feedback');
   const CurrentComponent = componentsMap[currentModal];
 
   return (
@@ -19,7 +23,7 @@ const App = (): JSX.Element => {
         currentModal = {currentModal}
         setCurrentModal={setCurrentModal} 
       />
-      {CurrentComponent && <CurrentComponent />}
+      {<CurrentComponent />}
     </>
   )
 }
