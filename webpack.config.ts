@@ -1,10 +1,11 @@
 import { EsbuildPlugin } from "esbuild-loader";
 import path from "path";
 import { WebpackConfiguration } from "webpack-cli";
-//import cssLoader from "./config/loaders/cssLoader";
+import cssLoader from "./config/loaders/cssLoader";
 import esbuildLoader from "./config/loaders/esbuildLoader";
 import fileLoader from "./config/loaders/fileLoader";
 import sassLoader from "./config/loaders/sassLoader";
+import scssLoader from "./config/loaders/scssLoader";
 import svgLoader from "./config/loaders/svgLoader";
 import { getPlugins } from "./config/plugins/getPlugins";
 import { ConfigEnvironment } from "./config/lib/types";
@@ -57,7 +58,9 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
       rules: [
         esbuildLoader(excludedRegex),
         fileLoader(excludedRegex),
-        sassLoader(excludedRegex), 
+				cssLoader(excludedRegex),
+				sassLoader(excludedRegex),
+        scssLoader,
         svgLoader,
       ],     
     },

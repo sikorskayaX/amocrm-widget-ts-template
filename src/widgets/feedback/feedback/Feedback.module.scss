@@ -1,0 +1,18 @@
+@import 'shared/styles/utils/mixins.scss';
+@import 'shared/styles/utils/variables.scss';
+
+.feedback{
+    position: relative;
+    &__text{
+        @include textDark($text-dark);
+        margin-bottom: 40px;
+    }
+    &__title{
+        @include titleDark;
+        margin-bottom: 30px;
+    }
+    &__link{
+        @include textDark($blue);
+        text-decoration-line: underline;
+    }
+}

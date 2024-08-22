@@ -1,7 +1,9 @@
+@import 'shared/styles/utils/mixins.scss';
+@import 'shared/styles/utils/variables.scss';
+
 .message{
     display: flex;
     flex-direction: column;
-    padding: 30px;
     &__title{
         @include bigTitlePTSans;
     }

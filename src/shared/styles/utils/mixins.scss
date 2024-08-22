@@ -1,0 +1,81 @@
+@import '../base/fonts.scss';
+
+@mixin textStyle{
+    font-style: normal;
+    line-height: normal;
+}
+
+//PT Sans
+@mixin textPTSans($color, $font-size, $font-weight){
+    @include textStyle;
+    font-family: "PT Sans", sans-serif;
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin imagesText(){
+    @include textPTSans($green, 10px, 700);
+    text-transform: uppercase;
+}
+
+@mixin labelsGrey(){
+    @include textPTSans($labels-grey, 20px, 400);
+    text-transform: uppercase;
+}
+
+@mixin textDark($color){
+    @include textPTSans($color, 15px, 400);
+}
+
+
+@mixin titleDark(){
+    @include textPTSans($text-dark, 18px, 700);
+    text-align: center;
+}
+
+@mixin titlePTSans(){
+    @include textPTSans($text-dark, 15px, 700);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@mixin bigTitlePTSans(){
+    @include textPTSans($text-black, 25px, 700);
+    text-align: center;
+}
+
+@mixin normalPTSans($color){
+    @include textPTSans($color, 15px, 400);
+}
+
+//Inter
+@mixin textInter($color, $font-size, $font-weight){
+    @include textStyle;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin titleBigInter(){
+    @include textInter($text-dark, 20px, 800);
+}
+
+@mixin textMediumInter(){
+    @include textInter($text-dark, 12px, 500);
+}
+
+@mixin buttonInter{
+    @include textInter($background, 15px, 800);
+}
+
+// Montserrat
+@mixin textMediumMontserrat(){
+    @include textStyle;
+    color: $text-dark;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+}

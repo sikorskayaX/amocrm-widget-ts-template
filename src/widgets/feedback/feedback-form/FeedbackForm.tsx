@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Checkbox, Button, TextField, Select } from "reon-ui-lib";
-import { widgetOptions, requestOptions, politikaLink } from "../mocks";
+import classes from './FeedbackForm.module.scss';
+import { widgetOptions, requestOptions, politikaLink } from "../consts";
 
 export type FeedbackFormProps = {
   setIsMessageSent: (messageSent: boolean) => void;
@@ -10,34 +11,48 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
   const [isChecked, setIsChecked] = useState(false);
   const [selectedWidget, setSelectedWidget] = useState("");
   const [selectedRequestType, setSelectedRequestType] = useState("");
+  const [supportRequestText, setSupportRequestText] = useState("");
   const [nameValue, setNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [phoneValue, setPhoneValue] = useState("");
 
-  const handleToggleChange = () => {
+  const handleToggleChange = useCallback(() => {
     setIsChecked((prev) => !prev);
-  };
+  }, []);
 
-  const handleSubmit = () => {
+  const handleSelectionWidgetChange = useCallback((value: string) => {
+    setSelectedWidget(value);
+  }, []);
+
+  const handleSelectionRequestTypeChange = useCallback((value: string) => {
+    setSelectedRequestType(value);
+  }, []);
+
+  const handleTextChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setSupportRequestText(event.target.value);
+  }, []);
+
+  const handleSubmit = useCallback(() => {
     setIsMessageSent(true);
-    console.debug(selectedWidget, selectedRequestType, nameValue, emailValue, phoneValue);
-  };
-
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.debug(selectedWidget, selectedRequestType, supportRequestText, nameValue, emailValue, phoneValue);
+  }, [isChecked]);
+  
+  const handleNameChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setNameValue(event.target.value);
-  };
+  }, []);
 
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setEmailValue(event.target.value);
-  };
+  }, []);
 
-  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhoneChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneValue(event.target.value);
-  };
+  }, []);
+
 
   return (
-    <form className="feedback__form">
-      <div className="feedback__selects">
+    <form className={classes["feedback__form"]}>
+      <div className={classes["feedback__selects"]}>
         <Select
           ariaIds={{
             comboboxId: "combobox1",
@@ -45,16 +60,18 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
             listboxId: "listbox1",
             optionIdPrefix: "option1",
           }}
+          popperZIndex = {1001}
           label="Выберите виджет"
           options={widgetOptions}
           placeholder="Выберите виджет"
           selectionSettings={{
             multiple: false,
-            onChange: setSelectedWidget,
+            onChange: handleSelectionWidgetChange,
             value: selectedWidget,
           }}
           variant="underlined"
-          styles={{ combobox: { width: "260px" } }}
+          styles={{ combobox: { width: "260px"}}}
+          
         />
         <Select
           ariaIds={{
@@ -63,20 +80,26 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
             listboxId: "listbox2",
             optionIdPrefix: "option2",
           }}
+          popperZIndex = {1001}
           label="Выберите тип обращения"
           options={requestOptions}
           placeholder="Выберите тип обращения"
           selectionSettings={{
             multiple: false,
-            onChange: setSelectedRequestType,
+            onChange: handleSelectionRequestTypeChange,
             value: selectedRequestType,
           }}
           variant="underlined"
           styles={{ combobox: { width: "260px" } }}
         />
       </div>
-      <textarea className="feedback__textarea" placeholder="Введите текст обращения" />
-      <div className="feedback__inputs">
+      <textarea 
+        className={classes["feedback__textarea"]} 
+        placeholder="Введите текст обращения" 
+        value={supportRequestText}
+        onChange={handleTextChange}
+      />
+      <div className={classes["feedback__inputs"]}>
         <TextField
           label="ФИО"
           placeholder="ФИО"
@@ -128,4 +151,3 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
 };
 
 export default FeedbackForm;
-

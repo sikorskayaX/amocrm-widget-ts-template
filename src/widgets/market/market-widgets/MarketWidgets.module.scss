@@ -1,0 +1,33 @@
+@import 'shared/styles/utils/mixins.scss';
+@import 'shared/styles/utils/variables.scss';
+
+.market{
+    &__title-little{
+        @include titlePTSans;
+        margin-top: 30px;
+        padding: 7px 50px;
+        border-radius: 10px;
+        border: 1px solid $green;
+        margin-bottom: 20px;
+        align-self: center;
+    }
+    &__images{
+        display: grid;
+        grid-template-columns: repeat(4, 115px);
+        row-gap: 20px;
+        justify-content: space-between;
+    }
+    &__images-block{
+        height: 78px;
+        border-radius: 3.807px;
+        background-color: $text-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__images-span{
+        @include imagesText;
+        max-width: 76px;
+        margin-left: 5px;
+    }
+}

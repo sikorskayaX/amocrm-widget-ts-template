@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from 'classnames';
-import { ModalKeys } from "@/App";
+import { ModalKeys } from "@/app/App";
+import classes from './Navigation.module.scss'
 
 type NavigationProps = {
     currentModal: string;
@@ -21,12 +22,12 @@ const Navigation = ({ currentModal, setCurrentModal }: NavigationProps) => {
     ];
 
     return (
-        <nav className="navigation">
-            <ul className="navigation__list">
+        <nav className={classes["navigation"]}>
+            <ul className={classes["navigation__list"]}>
                 {navItems.map(({ value, label }) => (
                     <li
                         key={value}
-                        className={classNames('navigation__item', { active: currentModal === value })}
+                        className={classNames(classes['navigation__item'], { [classes.active]: currentModal === value })}
                         onClick={() => setCurrentModal(value)}
                     >
                         {label}
