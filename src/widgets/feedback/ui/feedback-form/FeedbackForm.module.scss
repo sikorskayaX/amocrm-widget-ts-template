@@ -1,50 +1,50 @@
-@import 'shared/styles/utils/mixins.scss';
-@import 'shared/styles/utils/variables.scss';
+@import "shared/styles/utils/mixins.scss";
+@import "shared/styles/utils/variables.scss";
 
-.feedback{
-    &__form{
-        display: flex;
-        flex-direction: column;
+.feedback {
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__selects {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+  }
+  &__textarea {
+    @include normalPTSans($text-dark);
+    border-radius: 5px;
+    border: 1px solid $labels-grey;
+    padding: 10px;
+    height: 73px;
+    margin: 20px 0;
+    resize: none;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 20px;
     }
-    &__selects{
-        display: flex;
-        justify-content: space-between;
+
+    &::-webkit-scrollbar-track {
+      background: none;
+      padding: 4px;
     }
-    &__inputs{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 7px;
+
+    &::-webkit-scrollbar-thumb {
+      background: $light-grey;
+      border-radius: 2px;
+      margin: 4px;
     }
-    &__textarea {
-        @include normalPTSans($text-dark);
-        border-radius: 5px;
-        border: 1px solid $labels-grey;
-        padding: 10px;
-        height: 73px; 
-        margin: 20px 0;
-        resize: none;
-    
-        &::-webkit-scrollbar {
-            width: 4px;
-            height: 20px; 
-        }
-        
-        &::-webkit-scrollbar-track {
-            background: none; 
-            padding: 4px; 
-        }
-    
-        &::-webkit-scrollbar-thumb {
-            background: $light-grey; 
-            border-radius: 2px; 
-            margin: 4px; 
-        }
-        &::placeholder {
-            @include normalPTSans($labels-grey);
-        }
-        &:focus, &:hover {
-            border: 1px solid $blue;
-        }
+    &::placeholder {
+      @include normalPTSans($labels-grey);
     }
-    
+    &:focus,
+    &:hover {
+      border: 1px solid $blue;
+    }
+  }
 }

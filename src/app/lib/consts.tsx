@@ -1,6 +1,6 @@
 export enum ModalKeys {
-  Feedback = 'feedback',
-  Market = 'market',
-  Settings = 'settings',
-  Subscribe = 'subscribe',
-};
+  Feedback = "feedback",
+  Market = "market",
+  Settings = "settings",
+  Subscribe = "subscribe",
+}

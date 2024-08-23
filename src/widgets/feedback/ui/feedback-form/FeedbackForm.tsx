@@ -1,8 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { Checkbox, Button, TextField, Select } from "reon-ui-lib";
-import classes from './FeedbackForm.module.scss';
+import classes from "./FeedbackForm.module.scss";
 import { widgetOptions, requestOptions, politikaLink } from "../../lib/consts";
-
 
 export type FeedbackFormProps = {
   setIsMessageSent: (messageSent: boolean) => void;
@@ -21,27 +20,52 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
     setIsChecked((prev) => !prev);
   }, []);
 
-  const handleTextChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setSupportRequestText(event.target.value);
-  }, []);
+  const handleTextChange = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setSupportRequestText(event.target.value);
+    },
+    [],
+  );
 
   const handleSubmit = useCallback(() => {
     setIsMessageSent(true);
-    console.debug(selectedWidget, selectedRequestType, supportRequestText, nameValue, emailValue, phoneValue);
-  }, [selectedWidget, selectedRequestType, supportRequestText, nameValue, emailValue, phoneValue]);
-  
-  const handleNameChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setNameValue(event.target.value);
-  }, []);
+    console.debug(
+      selectedWidget,
+      selectedRequestType,
+      supportRequestText,
+      nameValue,
+      emailValue,
+      phoneValue,
+    );
+  }, [
+    selectedWidget,
+    selectedRequestType,
+    supportRequestText,
+    nameValue,
+    emailValue,
+    phoneValue,
+  ]);
 
-  const handleEmailChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailValue(event.target.value);
-  }, []);
+  const handleNameChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setNameValue(event.target.value);
+    },
+    [],
+  );
 
-  const handlePhoneChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneValue(event.target.value);
-  }, []);
+  const handleEmailChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setEmailValue(event.target.value);
+    },
+    [],
+  );
 
+  const handlePhoneChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setPhoneValue(event.target.value);
+    },
+    [],
+  );
 
   return (
     <form className={classes["feedback__form"]}>
@@ -53,7 +77,7 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
             listboxId: "listbox1",
             optionIdPrefix: "option1",
           }}
-          popperZIndex = {1001}
+          popperZIndex={1001}
           label="Выберите виджет"
           options={widgetOptions}
           placeholder="Выберите виджет"
@@ -63,8 +87,7 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
             value: selectedWidget,
           }}
           variant="underlined"
-          styles={{ combobox: { width: "260px"}}}
-          
+          styles={{ combobox: { width: "260px" } }}
         />
         <Select
           ariaIds={{
@@ -73,7 +96,7 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
             listboxId: "listbox2",
             optionIdPrefix: "option2",
           }}
-          popperZIndex = {1001}
+          popperZIndex={1001}
           label="Выберите тип обращения"
           options={requestOptions}
           placeholder="Выберите тип обращения"
@@ -86,9 +109,9 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
           styles={{ combobox: { width: "260px" } }}
         />
       </div>
-      <textarea 
-        className={classes["feedback__textarea"]} 
-        placeholder="Введите текст обращения" 
+      <textarea
+        className={classes["feedback__textarea"]}
+        placeholder="Введите текст обращения"
         value={supportRequestText}
         onChange={handleTextChange}
       />
@@ -124,7 +147,8 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
       <Checkbox
         label={
           <>
-            Я прочитал(-а) и согласен(-на) с{" "}<a href={politikaLink}>условиями</a> обработки персональных данных
+            Я прочитал(-а) и согласен(-на) с{" "}
+            <a href={politikaLink}>условиями</a> обработки персональных данных
           </>
         }
         checked={isChecked}

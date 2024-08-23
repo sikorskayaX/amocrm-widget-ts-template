@@ -1,34 +1,33 @@
-@import 'shared/styles/utils/mixins.scss';
-@import 'shared/styles/utils/variables.scss';
+@import "shared/styles/utils/mixins.scss";
+@import "shared/styles/utils/variables.scss";
 
 .navigation {
-    @include labelsGrey;
+  @include labelsGrey;
 
-    &__list {
-        cursor: pointer;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        border-bottom: solid $labels-grey 2px;
-        margin-bottom: 40px;
-        
+  &__list {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid $labels-grey 2px;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    padding-bottom: 10px;
+
+    &.active {
+      color: $blue;
+      border-bottom: solid $blue 4px;
+      font-weight: 700;
+      z-index: 1;
+      margin-bottom: -2px;
+      transition: color 0.5s;
     }
 
-    &__item {
-        padding-bottom: 10px;
-
-        &.active {
-            color: $blue;
-            border-bottom: solid $blue 4px;
-            font-weight: 700;
-            z-index: 1; 
-            margin-bottom: -2px; 
-            transition: color 0.5s;
-        }
-
-        &:hover {
-            color: $blue;
-            transition: color 0.3s;
-        }
+    &:hover {
+      color: $blue;
+      transition: color 0.3s;
     }
+  }
 }
