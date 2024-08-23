@@ -4,7 +4,7 @@ import { FeedbackFormProps } from "../feedback-form/FeedbackForm";
 import classes from './FeedbackMessage.module.scss'
 
 const FeedbackMessage = ({setIsMessageSent}: FeedbackFormProps) : JSX.Element => {
-    const handleSubmit = () =>{
+    const handleSubmit = () : void =>{
         setIsMessageSent(false);
     }
     return(

@@ -1,21 +1,20 @@
 import React from 'react';
-import Gong from './assets/gong.svg'
-import Interface from './assets/interface.svg';
-import Tasks from './assets/tasks.svg';
-import NotificationsTG from './assets/nots.svg';
-import Letters from './assets/letters.svg';
-import Bot from './assets/bot.svg';
-import Plan from './assets/plan.svg';
-import Requests from './assets/requests.svg';
-import Control from './assets/control.svg';
-import Notifications from './assets/notifs.svg';
-import Time from './assets/time.svg';
-import Names from './assets/names.svg';
-import Cities from './assets/cities.svg';
-import Connects from './assets/connects.svg';
-import Tips from './assets/tips.svg';
-import { WidgetItem } from './market-widgets/MarketWidgets';
-
+import Gong from 'shared/assets/gong.svg'
+import Interface from 'shared/assets/interface.svg';
+import Tasks from 'shared/assets/tasks.svg';
+import NotificationsTG from 'shared/assets/nots.svg';
+import Letters from 'shared/assets/letters.svg';
+import Bot from 'shared/assets/bot.svg';
+import Plan from 'shared/assets/plan.svg';
+import Requests from 'shared/assets/requests.svg';
+import Control from 'shared/assets/control.svg';
+import Notifications from 'shared/assets/notifs.svg';
+import Time from 'shared/assets/time.svg';
+import Names from 'shared/assets/names.svg';
+import Cities from 'shared/assets/cities.svg';
+import Connects from 'shared/assets/connects.svg';
+import Tips from 'shared/assets/tips.svg';
+import { WidgetItem } from '../ui/market-widgets/MarketWidgets';
 
 export const widgets: WidgetItem[] = [
     { id: 'gong', component: <Gong/>, label: <>ГОНГ</> },

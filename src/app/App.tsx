@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import 'shared/styles/layout/layout.scss';
-import Feedback from "../widgets/feedback/feedback/Feedback";
-import Market from '../widgets/market/market/Market';
+import Feedback from "../widgets/feedback/Feedback";
+import Market from '../widgets/market/Market';
 import Navigation from '../widgets/navigation/Navigation';
-
-export type ModalKeys = 'feedback' | 'market' | 'settings' | 'subscribe'; 
+import { ModalKeys } from "./lib/consts";
 
 const componentsMap = {
   feedback: <Feedback/>,
@@ -14,7 +13,7 @@ const componentsMap = {
 };
 
 const App = (): JSX.Element => {
-  const [currentModal, setCurrentModal] = useState<ModalKeys>('feedback');
+  const [currentModal, setCurrentModal] = useState<ModalKeys>(ModalKeys.Feedback);
 
   return (
     <>

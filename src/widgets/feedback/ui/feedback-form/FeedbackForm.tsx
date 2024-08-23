@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { Checkbox, Button, TextField, Select } from "reon-ui-lib";
 import classes from './FeedbackForm.module.scss';
-import { widgetOptions, requestOptions, politikaLink } from "../consts";
+import { widgetOptions, requestOptions, politikaLink } from "../../lib/consts";
+
 
 export type FeedbackFormProps = {
   setIsMessageSent: (messageSent: boolean) => void;
@@ -20,14 +21,6 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
     setIsChecked((prev) => !prev);
   }, []);
 
-  const handleSelectionWidgetChange = useCallback((value: string) => {
-    setSelectedWidget(value);
-  }, []);
-
-  const handleSelectionRequestTypeChange = useCallback((value: string) => {
-    setSelectedRequestType(value);
-  }, []);
-
   const handleTextChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setSupportRequestText(event.target.value);
   }, []);
@@ -35,7 +28,7 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
   const handleSubmit = useCallback(() => {
     setIsMessageSent(true);
     console.debug(selectedWidget, selectedRequestType, supportRequestText, nameValue, emailValue, phoneValue);
-  }, [isChecked]);
+  }, [selectedWidget, selectedRequestType, supportRequestText, nameValue, emailValue, phoneValue]);
   
   const handleNameChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setNameValue(event.target.value);
@@ -66,7 +59,7 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
           placeholder="Выберите виджет"
           selectionSettings={{
             multiple: false,
-            onChange: handleSelectionWidgetChange,
+            onChange: setSelectedWidget,
             value: selectedWidget,
           }}
           variant="underlined"
@@ -86,7 +79,7 @@ const FeedbackForm = ({ setIsMessageSent }: FeedbackFormProps): JSX.Element => {
           placeholder="Выберите тип обращения"
           selectionSettings={{
             multiple: false,
-            onChange: handleSelectionRequestTypeChange,
+            onChange: setSelectedRequestType,
             value: selectedRequestType,
           }}
           variant="underlined"

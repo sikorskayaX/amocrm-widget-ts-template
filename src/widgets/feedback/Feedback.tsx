@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import FeedbackForm from "../feedback-form/FeedbackForm";
-import FeedbackMessage from "../feedback-message/FeedbackMessage";
+import FeedbackMessage from "./ui/feedback-message/FeedbackMessage";
 import classes from './Feedback.module.scss'
-import { marketLink } from "../consts";
+import { marketLink } from "./lib/consts";
+import FeedbackForm from "./ui/feedback-form/FeedbackForm";
+
 
 const Feedback = () : JSX.Element => {
     const [isMessageSent, setIsMessageSent] = useState<boolean>(false);

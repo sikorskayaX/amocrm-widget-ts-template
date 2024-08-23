@@ -1,11 +1,12 @@
 import React from "react";
-import MarketWidgets from "../market-widgets/MarketWidgets";
+import MarketWidgets from "./ui/market-widgets/MarketWidgets";
 
-import Arrow from '../assets/Arrow.svg';
-import MarketSvg from '../assets/market.svg';
-import laptopImg from '../assets/img1.png';
-import { widgets, freeWidgets } from "../consts";
+import Arrow from 'shared/assets/Arrow.svg';
+import MarketSvg from 'shared/assets/market.svg';
+import laptopImg from 'shared/assets/img1.png';
+
 import classes from './Market.module.scss';
+import { widgets, freeWidgets } from "./lib/consts";
 
 const Market = () : JSX.Element => {
     return (
