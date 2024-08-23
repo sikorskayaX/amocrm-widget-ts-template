@@ -1,5 +1,5 @@
 export default (excludedRegex: RegExp) => ({
-	test: /\.(png|jp(e*)g|gif)$/,
+	test: /\.(png|jpe?g|gif)$/i,
+	loader: 'file-loader',
 	exclude: excludedRegex,
-	type: 'asset/resource',
 })

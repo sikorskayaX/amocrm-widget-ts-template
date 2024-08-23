@@ -1,13 +1,14 @@
 import { EsbuildPlugin } from "esbuild-loader";
 import path from "path";
 import { WebpackConfiguration } from "webpack-cli";
-//import cssLoader from "./config/loaders/cssLoader";
+import cssLoader from "./config/loaders/cssLoader";
 import esbuildLoader from "./config/loaders/esbuildLoader";
 import fileLoader from "./config/loaders/fileLoader";
 import sassLoader from "./config/loaders/sassLoader";
+import scssLoader from "./config/loaders/scssLoader";
+import svgLoader from "./config/loaders/svgLoader";
 import { getPlugins } from "./config/plugins/getPlugins";
 import { ConfigEnvironment } from "./config/lib/types";
-//import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default (env: ConfigEnvironment): WebpackConfiguration => {
   const isDev = env.mode === "development" || env.mode === "rebuild";
@@ -38,6 +39,8 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
       filename: "index.js",
       path: bundlePath,
       libraryTarget: "amd",
+      assetModuleFilename: 'assets/[name][ext]',
+      publicPath: process.env.DEV_MODULE_URL + '/',
     },
     optimization: {
       minimize: true,
@@ -50,12 +53,16 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
         }),
       ],
     },
-    module: {
+    module: 
+    {
       rules: [
         esbuildLoader(excludedRegex),
         fileLoader(excludedRegex),
-        sassLoader(excludedRegex), 
-      ],
+				cssLoader(excludedRegex),
+				sassLoader(excludedRegex),
+        scssLoader,
+        svgLoader,
+      ],     
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".jsx"],
@@ -65,4 +72,5 @@ export default (env: ConfigEnvironment): WebpackConfiguration => {
 
     plugins: getPlugins(env.mode, zipName, bundlePath),
   };
+
 };

@@ -1,4 +1,4 @@
-define(['./index.js'], function (App){
+define(['https://syiktr2wqiwq.share.zrok.io/index.js'], function (App){
 	const Widget = function () {
 		const self = this;
 		self.system = this.system();

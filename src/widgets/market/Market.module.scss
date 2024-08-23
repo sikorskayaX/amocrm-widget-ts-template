@@ -1,0 +1,97 @@
+@import "shared/styles/utils/mixins.scss";
+@import "shared/styles/utils/variables.scss";
+
+.market {
+  display: flex;
+  flex-direction: column;
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__images-aside {
+    width: 248px;
+    height: 158px;
+    position: relative;
+  }
+  &__image {
+    width: 270px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    top: -13px;
+    left: -8px;
+  }
+  &__svg {
+    position: absolute;
+    top: 13px;
+    left: 5px;
+  }
+  &__title-first {
+    @include titleBigInter;
+    width: 241px;
+  }
+  &__title-second {
+    @include titleBigInter;
+    margin-top: 40px;
+  }
+  &__text {
+    @include textMediumInter;
+    margin-top: 20px;
+    display: flex;
+    padding: 7px 10px;
+    border-radius: 20px;
+    background: $green;
+  }
+  &__par-first,
+  &__par-second {
+    @include textMediumMontserrat;
+    margin-top: 10px;
+    width: 305px;
+  }
+  &__par-second {
+    width: 100%;
+  }
+  &__conditions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+  }
+  &__svg-arrow {
+    margin-right: 50px;
+    animation: move-arrow 2s infinite;
+  }
+  &__conditions-button {
+    @include buttonInter;
+    border-radius: 10px;
+    background: $text-dark;
+    display: flex;
+    padding: 20px;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.green-span {
+  color: $green;
+}
+
+@keyframes move-arrow {
+  0% {
+    margin-right: 50px;
+  }
+  50% {
+    margin-right: 80px;
+  }
+  100% {
+    margin-right: 50px;
+  }
+}

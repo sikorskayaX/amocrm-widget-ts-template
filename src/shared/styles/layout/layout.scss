@@ -1,0 +1,17 @@
+@import "../utils/variables";
+
+.widget-settings {
+  background-color: $background;
+  &__wrap-desc-space {
+    display: flex;
+    flex-direction: column;
+    padding: 31px;
+    width: 655px;
+  }
+  &__base-space {
+    background-color: $background;
+  }
+  &__name {
+    color: $text-dark;
+  }
+}

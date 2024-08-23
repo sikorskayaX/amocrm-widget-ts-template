@@ -1,11 +1,11 @@
-import { WidgetSchema } from 'shared/types/Widget.types';
-import App from './App';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+﻿import { WidgetSchema } from "shared/types/Widget.types";
+import App from "./app/App";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const Widget: WidgetSchema = {
   async render(): Promise<boolean> {
-    console.debug('widget works 1234567');
+    console.debug("widget works 1!");
     return true;
   },
 
@@ -14,10 +14,11 @@ const Widget: WidgetSchema = {
   },
 
   settings(): boolean {
-    console.debug('settings');
-    const widgetBlock = document.querySelector('.widget-settings') as HTMLElement;
+    const widgetBlock = document.querySelector(
+      ".widget-settings__wrap-desc-space",
+    ) as HTMLDivElement;
     const modalRoot = ReactDOM.createRoot(widgetBlock);
-    modalRoot.render(<App/>)
+    modalRoot.render(<App />);
     return true;
   },
 
@@ -33,9 +34,7 @@ const Widget: WidgetSchema = {
     return true;
   },
 
-  destroy(): void {
-  },
-
+  destroy(): void {},
 };
 
 export default Widget;
